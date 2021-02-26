@@ -14,6 +14,10 @@
 		BED3BF8F25E8BF7C00884DCA /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BED3BF8D25E8BF7C00884DCA /* CoreDataDemo.xcdatamodeld */; };
 		BED3BF9125E8BF9A00884DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED3BF9025E8BF9A00884DCA /* Assets.xcassets */; };
 		BED3BF9425E8BF9A00884DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED3BF9225E8BF9A00884DCA /* LaunchScreen.storyboard */; };
+		BED3BFB525E8F3F400884DCA /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFB325E8F3F400884DCA /* Person+CoreDataClass.swift */; };
+		BED3BFB625E8F3F400884DCA /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFB425E8F3F400884DCA /* Person+CoreDataProperties.swift */; };
+		BED3BFC425E923D800884DCA /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFC225E923D800884DCA /* PersonTableViewCell.swift */; };
+		BED3BFC525E923D800884DCA /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED3BFC325E923D800884DCA /* PersonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		BED3BF9025E8BF9A00884DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BED3BF9325E8BF9A00884DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED3BF9525E8BF9A00884DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BED3BFB325E8F3F400884DCA /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BED3BFB425E8F3F400884DCA /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BED3BFC225E923D800884DCA /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		BED3BFC325E923D800884DCA /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,60 @@
 		BED3BF8325E8BF7C00884DCA /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BED3BF8425E8BF7C00884DCA /* AppDelegate.swift */,
-				BED3BF8625E8BF7C00884DCA /* SceneDelegate.swift */,
-				BED3BF8825E8BF7C00884DCA /* ViewController.swift */,
-				BED3BF8A25E8BF7C00884DCA /* Main.storyboard */,
+				BED3BFBD25E91E3200884DCA /* View */,
+				BED3BFB925E8F46500884DCA /* Storyboard */,
+				BED3BFB225E8F3CE00884DCA /* Model */,
+				BED3BFB825E8F43D00884DCA /* Delegate */,
+				BED3BFBA25E8F4CF00884DCA /* ViewController */,
 				BED3BF9025E8BF9A00884DCA /* Assets.xcassets */,
-				BED3BF9225E8BF9A00884DCA /* LaunchScreen.storyboard */,
 				BED3BF9525E8BF9A00884DCA /* Info.plist */,
 				BED3BF8D25E8BF7C00884DCA /* CoreDataDemo.xcdatamodeld */,
 			);
 			path = CoreDataDemo;
+			sourceTree = "<group>";
+		};
+		BED3BFB225E8F3CE00884DCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BED3BFB325E8F3F400884DCA /* Person+CoreDataClass.swift */,
+				BED3BFB425E8F3F400884DCA /* Person+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BED3BFB825E8F43D00884DCA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BED3BF8425E8BF7C00884DCA /* AppDelegate.swift */,
+				BED3BF8625E8BF7C00884DCA /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		BED3BFB925E8F46500884DCA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BED3BF8A25E8BF7C00884DCA /* Main.storyboard */,
+				BED3BF9225E8BF9A00884DCA /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		BED3BFBA25E8F4CF00884DCA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BED3BF8825E8BF7C00884DCA /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BED3BFBD25E91E3200884DCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BED3BFC225E923D800884DCA /* PersonTableViewCell.swift */,
+				BED3BFC325E923D800884DCA /* PersonTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +181,7 @@
 			files = (
 				BED3BF9425E8BF9A00884DCA /* LaunchScreen.storyboard in Resources */,
 				BED3BF9125E8BF9A00884DCA /* Assets.xcassets in Resources */,
+				BED3BFC525E923D800884DCA /* PersonTableViewCell.xib in Resources */,
 				BED3BF8C25E8BF7C00884DCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +195,10 @@
 			files = (
 				BED3BF8925E8BF7C00884DCA /* ViewController.swift in Sources */,
 				BED3BF8F25E8BF7C00884DCA /* CoreDataDemo.xcdatamodeld in Sources */,
+				BED3BFB625E8F3F400884DCA /* Person+CoreDataProperties.swift in Sources */,
+				BED3BFB525E8F3F400884DCA /* Person+CoreDataClass.swift in Sources */,
 				BED3BF8525E8BF7C00884DCA /* AppDelegate.swift in Sources */,
+				BED3BFC425E923D800884DCA /* PersonTableViewCell.swift in Sources */,
 				BED3BF8725E8BF7C00884DCA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
