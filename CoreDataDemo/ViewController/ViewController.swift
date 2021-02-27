@@ -6,18 +6,26 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController: UIViewController {
 
     @IBOutlet weak var tblPersonList:UITableView!
     
+    //let context = (UIApplication.shared.delegate as! UIApplication).per.viewContext
+    var peopleList:[Person]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nid = UINib(nibName: "PersonTableViewCell", bundle: nil)
         tblPersonList.register(nid, forCellReuseIdentifier: "PersonTableViewCell")
+        
     }
-
+    
+    func fecthData() {
+        
+    }
+    
+    
 }
 
 
@@ -33,6 +41,8 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         tableView.estimatedRowHeight = 50
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 }
+/*
+ */

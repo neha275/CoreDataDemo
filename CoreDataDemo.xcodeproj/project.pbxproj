@@ -18,6 +18,7 @@
 		BED3BFB625E8F3F400884DCA /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFB425E8F3F400884DCA /* Person+CoreDataProperties.swift */; };
 		BED3BFC425E923D800884DCA /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFC225E923D800884DCA /* PersonTableViewCell.swift */; };
 		BED3BFC525E923D800884DCA /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED3BFC325E923D800884DCA /* PersonTableViewCell.xib */; };
+		BED3BFCA25E9803D00884DCA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED3BFC925E9803D00884DCA /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BED3BFB425E8F3F400884DCA /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BED3BFC225E923D800884DCA /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		BED3BFC325E923D800884DCA /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		BED3BFC925E9803D00884DCA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BED3BF8825E8BF7C00884DCA /* ViewController.swift */,
+				BED3BFC925E9803D00884DCA /* AddViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				BED3BF8925E8BF7C00884DCA /* ViewController.swift in Sources */,
 				BED3BF8F25E8BF7C00884DCA /* CoreDataDemo.xcdatamodeld in Sources */,
+				BED3BFCA25E9803D00884DCA /* AddViewController.swift in Sources */,
 				BED3BFB625E8F3F400884DCA /* Person+CoreDataProperties.swift in Sources */,
 				BED3BFB525E8F3F400884DCA /* Person+CoreDataClass.swift in Sources */,
 				BED3BF8525E8BF7C00884DCA /* AppDelegate.swift in Sources */,

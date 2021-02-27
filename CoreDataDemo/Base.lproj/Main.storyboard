@@ -51,7 +51,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jr9-6P-8BQ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="t5w-Fn-bm5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="PoA-lL-XYS">
+                            <connections>
+                                <segue destination="CPu-ZC-HxB" kind="popoverPresentation" popoverAnchorBarButtonItem="PoA-lL-XYS" id="HaA-tH-sjV">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tblPersonList" destination="YNC-0M-EdA" id="Li4-OQ-yU5"/>
@@ -61,11 +67,95 @@
             </objects>
             <point key="canvasLocation" x="-630" y="-569"/>
         </scene>
+        <!--Add View Controller-->
+        <scene sceneID="z4q-RI-Xhw">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="CPu-ZC-HxB" customClass="AddViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xgL-Gz-gUZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-SK-8tB">
+                                <rect key="frame" x="30" y="336" width="354" height="170"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VMp-Nh-Mma">
+                                        <rect key="frame" x="5" y="10" width="344" height="155"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FE-GZ-NAY">
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smE-qI-Y8u">
+                                                <rect key="frame" x="0.0" y="60" width="344" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-f9-enq">
+                                                <rect key="frame" x="0.0" y="120" width="344" height="35"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irl-Tu-ahX" userLabel="Cancel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="35"/>
+                                                        <color key="backgroundColor" red="0.3868745267" green="0.77901196480000001" blue="0.99986904860000003" alpha="0.88235766267123283" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onCancelButtonTap:" destination="CPu-ZC-HxB" eventType="touchUpInside" id="s2f-6k-NtH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5Y-PQ-DUA">
+                                                        <rect key="frame" x="177" y="0.0" width="167" height="35"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <state key="normal" title="Add">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAddbuttonTap:" destination="CPu-ZC-HxB" eventType="touchUpInside" id="gwB-R9-VhM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="VMp-Nh-Mma" firstAttribute="leading" secondItem="ajg-SK-8tB" secondAttribute="leading" constant="5" id="WdQ-9F-r4O"/>
+                                    <constraint firstAttribute="bottom" secondItem="VMp-Nh-Mma" secondAttribute="bottom" constant="5" id="XDM-NT-Q08"/>
+                                    <constraint firstAttribute="trailing" secondItem="VMp-Nh-Mma" secondAttribute="trailing" constant="5" id="cS6-sS-jap"/>
+                                    <constraint firstAttribute="height" constant="170" id="iD9-uX-fk4"/>
+                                    <constraint firstItem="VMp-Nh-Mma" firstAttribute="top" secondItem="ajg-SK-8tB" secondAttribute="top" constant="10" id="tzs-5H-9iK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R7k-3a-yH2"/>
+                        <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R7k-3a-yH2" firstAttribute="trailing" secondItem="ajg-SK-8tB" secondAttribute="trailing" constant="30" id="ZY0-dJ-WnX"/>
+                            <constraint firstItem="ajg-SK-8tB" firstAttribute="centerX" secondItem="xgL-Gz-gUZ" secondAttribute="centerX" id="bXo-rN-ix3"/>
+                            <constraint firstItem="ajg-SK-8tB" firstAttribute="centerY" secondItem="xgL-Gz-gUZ" secondAttribute="centerY" id="hAQ-2J-1Jn"/>
+                            <constraint firstItem="ajg-SK-8tB" firstAttribute="leading" secondItem="R7k-3a-yH2" secondAttribute="leading" constant="30" id="jT6-DS-Eoa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtAge" destination="smE-qI-Y8u" id="KOJ-NE-yks"/>
+                        <outlet property="txtName" destination="3FE-GZ-NAY" id="HRt-gm-msg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GpX-n8-gb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="-435"/>
+        </scene>
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

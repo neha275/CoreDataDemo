@@ -17,7 +17,6 @@ extension Person {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var gender: String?
     @NSManaged public var age: Int64
 
 }
