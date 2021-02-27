@@ -11,17 +11,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tblPersonList:UITableView!
     
-    //let context = (UIApplication.shared.delegate as! UIApplication).per.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var peopleList:[Person]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nid = UINib(nibName: "PersonTableViewCell", bundle: nil)
         tblPersonList.register(nid, forCellReuseIdentifier: "PersonTableViewCell")
-        
+        fetchData()
     }
     
-    func fecthData() {
+    func fetchData() {
+        do {
+            self.peopleList =  try context.fetch(Person.fetchRequest())
+            DispatchQueue.main.async {
+                self.tblPersonList.reloadData()
+            }
+            
+        }catch{
+            print("Error Occurred")
+        }
         
     }
     
@@ -36,6 +45,9 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblPersonList.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as! PersonTableViewCell
+        let person = self.peopleList?[indexPath.row]
+        cell.lblName.text = person?.name
+        cell.lblAge.text = "\(String(describing: person?.age))"
         return cell
     }
     
