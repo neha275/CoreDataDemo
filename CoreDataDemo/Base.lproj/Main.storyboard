@@ -11,7 +11,6 @@
         <!--Navigation Controller-->
         <scene sceneID="CUb-Rm-dbP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xac-az-9cY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Gsx-eJ-m8z" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5d-t0-uc6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -21,6 +20,7 @@
                         <segue destination="uR8-k7-haI" kind="relationship" relationship="rootViewController" id="e7B-aF-xx3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xac-az-9cY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1748" y="121"/>
         </scene>
@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" id="Jr9-6P-8BQ">
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="PoA-lL-XYS">
                             <connections>
-                                <segue destination="CPu-ZC-HxB" kind="popoverPresentation" popoverAnchorBarButtonItem="PoA-lL-XYS" id="HaA-tH-sjV">
+                                <segue destination="CPu-ZC-HxB" kind="popoverPresentation" identifier="addperson" popoverAnchorBarButtonItem="PoA-lL-XYS" id="HaA-tH-sjV">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
