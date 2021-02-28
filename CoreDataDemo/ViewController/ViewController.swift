@@ -73,6 +73,38 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
+    //MARK: Edit Option
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = self.peopleList![indexPath.row]
+        //Create Alert To edit
+        let alert = UIAlertController(title: "Edit", message: "Edit Name", preferredStyle: .alert)
+        alert.addTextField()
+        alert.addTextField()
+        let txtName = alert.textFields![0]
+        txtName.text = person.name
+        let txtAge = alert.textFields![1]
+        txtAge.text = "\(person.age)"
+        
+        //Configure Button
+        let saveButton = UIAlertAction(title: "Save", style: .default, handler: {
+            (action) in
+            
+            person.name = alert.textFields![0].text
+            //let age  = alert.textFields![1].text
+            person.age = Int64(alert.textFields![1].text!) ?? 18
+            do {
+                try self.context.save()
+            }catch{
+                print("Error occurred while editing \(error.localizedDescription)")
+            }
+            self.fetchData()
+            
+        })
+        alert.addAction(saveButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: - Swipe Option for Delete
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete", handler: {
             (sction, view, completionHandler) in
@@ -92,7 +124,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
                     })
                     let cancelAction = UIAlertAction(title: "Cancel", style:.cancel, handler: { (alert) in
                         //Disable the Action
-                    
+                        self.fetchData()
                     })
                     alertView.addAction(okAction)
                     alertView.addAction(cancelAction)
