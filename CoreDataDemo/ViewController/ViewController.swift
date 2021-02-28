@@ -73,6 +73,35 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete", handler: {
+            (sction, view, completionHandler) in
+        
+            
+            let alertView = UIAlertController(title: "", message: "Are you sure you want to delete ? ", preferredStyle: .alert)
+                     let okAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                        let personToRemove = self.peopleList![indexPath.row]
+                        self.context.delete(personToRemove)
+                        do {
+                            try self.context.save()
+                        }catch {
+                            print("Error occurred in \(error.localizedDescription)")
+                        }
+                        self.fetchData()
+                        
+                    })
+                    let cancelAction = UIAlertAction(title: "Cancel", style:.cancel, handler: { (alert) in
+                        //Disable the Action
+                    
+                    })
+                    alertView.addAction(okAction)
+                    alertView.addAction(cancelAction)
+                    self.present(alertView, animated: true, completion: nil)
+        })
+        action.image =  UIImage(systemName: "xmark.bin")
+        
+        return  UISwipeActionsConfiguration(actions: [action])
+    }
 }
 
 protocol UpdateRow {
