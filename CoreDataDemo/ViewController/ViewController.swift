@@ -23,14 +23,15 @@ class ViewController: UIViewController {
     
     //MARK: - Get Data From Core Data
     func fetchData() {
-        do {
-            self.peopleList =  try context.fetch(Person.fetchRequest())
+        let objPersonDataModel = PersonDataModel()
+        let data = objPersonDataModel.fetachAllData()
+        if data.status == "Success" {
+            self.peopleList =  data.collection
             DispatchQueue.main.async {
                 self.tblPersonList.reloadData()
             }
-            
-        }catch{
-            print("Error Occurred \(error.localizedDescription)")
+        }else {
+            print("Error Occurred \(data.errorMsg)")
         }
         
     }
